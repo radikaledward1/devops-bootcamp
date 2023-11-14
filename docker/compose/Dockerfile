@@ -1,5 +1,15 @@
-FROM
+# Imagen del contenedor
+FROM node:16-alpine
 
-RUN
+# folder dentro del contenedor donde recide el codigo
+WORKDIR /app
 
-CMD
+# Copia todo el contenido del directorio actual al directorio /app del contenedor
+COPY . ./
+
+EXPOSE 3000
+
+# Instala las dependencias del proyecto
+RUN npm install
+
+CMD ["npm", "start"]
