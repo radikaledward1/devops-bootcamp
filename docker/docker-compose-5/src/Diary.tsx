@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Container, Entries, Line, Select, Textarea, Card, CardItem } from './components/styles';
 import * as DiaryService from './services/diaryService';
 import { DiaryEntry, newDiaryEntry } from './services/types';
+import { datadogInit } from './services/datadog';
 
 const Diary = () => {
 
@@ -9,6 +10,7 @@ const Diary = () => {
     const [values, setValues] = useState({ weather: '', visibility: '', comments: '' });
 
     useEffect(() => {
+        datadogInit();
         DiaryService.getDiaryEntries().then((entries) => {
             const diaryentries = entries ? entries : [];
             setEntries(diaryentries);
