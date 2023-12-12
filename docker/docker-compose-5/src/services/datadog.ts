@@ -1,4 +1,5 @@
 import { datadogRum } from "@datadog/browser-rum";
+import { datadogLogs } from "@datadog/browser-logs";
 import * as AppConfig from './AppConfig';
 
 let datadogInitialized: boolean = false;
@@ -19,6 +20,14 @@ export const datadogInit = (): void => {
             trackResources: AppConfig.datadog_track_resources,
             trackLongTasks: AppConfig.datadog_track_long_tasks,
             defaultPrivacyLevel: 'allow',
+        });
+
+        datadogLogs.init({
+            clientToken: AppConfig.datadog_client_token,
+            site: AppConfig.datadog_site,
+            service: AppConfig.datadog_service,
+            forwardErrorsToLogs: AppConfig.datadog_forward_errors_to_logs,
+            sessionSampleRate: AppConfig.datadog_sample_rate,
         });
 
         datadogInitialized = true;
