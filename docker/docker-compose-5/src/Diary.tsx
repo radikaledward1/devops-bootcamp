@@ -48,7 +48,7 @@ const Diary = () => {
         DiaryService.addDiaryEntry(newEntry).then((entry) => {
             if (entry) {
                 setEntries(entries.concat(entry));
-                setValues({ weather: '', visibility: '', comments: '' });   
+                setValues({ ...values, weather: '', visibility: '', comments: '' });   
             }
         });
     };
@@ -73,7 +73,7 @@ const Diary = () => {
                     <option value="very bad">Very Bad</option>
                 </Select><br/>
                 <label>Comments:</label><br/>
-                <Textarea onChange={handleChangeComments}/><br/>
+                <Textarea onChange={handleChangeComments} value={values.comments}/><br/>
                 <Button type="button" onClick={saveEntry}>Save</Button>
             </div>
             <div>
