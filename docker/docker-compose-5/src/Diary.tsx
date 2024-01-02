@@ -58,7 +58,7 @@ const Diary = () => {
             <h1>Weather Diary</h1>
             <div>
                 <label>Weather:</label><br/>
-                <Select onChange={handleChangeVisibility}>
+                <Select onChange={handleChangeWeather}>
                     <option value="sunny">Sunny</option>
                     <option value="cloudy">Cloudy</option>
                     <option value="rainy">Rainy</option>
@@ -66,7 +66,7 @@ const Diary = () => {
                     <option value="windy">Windy</option>
                 </Select><br/>
                 <label>Visibility:</label><br/>
-                <Select onChange={handleChangeWeather}>
+                <Select onChange={handleChangeVisibility}>
                     <option value="very good">Very Good</option>
                     <option value="good">Good</option>
                     <option value="bad">Bad</option>
