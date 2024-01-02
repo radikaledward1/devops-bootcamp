@@ -12,7 +12,7 @@ const logger = createLogger({
         format: 'YYYY-MM-DD HH:mm:ss',
         }),
         logFormat,
-        format.json()
+        //format.json()
     ),
     transports: [
         new transports.Console(),
