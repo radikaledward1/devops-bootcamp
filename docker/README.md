@@ -43,6 +43,9 @@ docker inspect <container>
 
 ### Docker RM (Remove)
 - Permite remover imagenes, contenedores, Volumenes
+``````
+docker rm <container>
+docker rmi <image>
 
 ### Ejemplo 1
 - Descargar imagen de Jenkins
